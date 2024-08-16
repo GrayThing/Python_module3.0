@@ -1,4 +1,4 @@
-def send_mail(message, recipient, sender="university.help@gmail.com"):
+def send_mail(message, recipient, *, sender='university.help@gmail.com'):
     if recipient[:-5:-1] != 'moc.' and recipient[:-5:-1] != 'ten.' and recipient[:-4:-1] != 'ur.' or '@' not in recipient:
         print('Недопустимый адрес получателя!')
         print(f"Невозможно отправить письмо с адреса {sender} на адрес {recipient}")
@@ -14,7 +14,7 @@ def send_mail(message, recipient, sender="university.help@gmail.com"):
 
 
 send_mail('Привет', 'samorodov-artem@mail.ru')
-send_mail('Привет', 'samorodov-artem@mail.r', 'noreplay@gmail.com')
-send_mail('Привет', 'samorodov-artem@mail.ru', 'noreplaygmail.com')
-send_mail('Привет', 'samorodov-artem@mail.ru', 'samorodov-artem@mail.ru')
-send_mail('Привет', 'samorodov-artem@mail.ru', 'noreplay@gmail.com')
+send_mail('Привет', 'samorodov-artem@mail.ru', sender='noreplay@gmail.co')
+send_mail('Привет', 'samorodov-artem@mail.r', sender='noreplay@gmail.com')
+send_mail('Привет', 'samorodov-artemmail.ru', sender='samorodov-artem@mail.ru')
+send_mail('Привет', 'samorodov-artem@mail.ru', sender='noreplay@gmail.com')
