@@ -14,15 +14,11 @@ def calculate_structure_sum(*args):
             res += value
         if isinstance(value, str):
             res += len(value)
-        if isinstance(value, list):
+        if isinstance(value, list) or isinstance(value, set) or isinstance(value, tuple):
             res += calculate_structure_sum(*value)
         if isinstance(value, dict):
             values_in_dict = list(value.items())
             res += calculate_structure_sum(*values_in_dict)
-        if isinstance(value, tuple):
-            res += calculate_structure_sum(*value)
-        if isinstance(value, set):
-            res += calculate_structure_sum(*value)
     return res
 
 
